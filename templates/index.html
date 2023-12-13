@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fake News Detection</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        header {
+            background-color: #007BFF;
+            color: #fff;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+        }
+
+        .form-section {
+            margin-top: 20px;
+        }
+
+        form {
+            background-color: #ffcccb; /* Light coral color, adjust as needed */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        label, textarea {
+            display: block;
+            margin: 10px 0;
+        }
+
+        textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            resize: none;
+        }
+
+        input[type="submit"] {
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .result-section {
+            margin-top: 20px;
+        }
+
+        h2 {
+            margin: 20px 0;
+        }
+
+        .user-input {
+            font-weight: bold;
+            color: #007BFF;
+        }
+
+        .predicted-label {
+            font-weight: bold;
+            color: #28a745; /* Green color for positive prediction, adjust as needed */
+        }
+
+        .error-message {
+            color: red;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Fake News Detection</h1>
+        </header>
+
+        <section class="form-section">
+            <form method="POST" action="{{ url_for('analyse') }}">
+                <label for="user_input">Enter a headline for analysis:
+                    Headline should be less than 15 words
+                </label>
+                <textarea name="user_input" id="user_input" rows="4" cols="50" placeholder="Type your headline here..."></textarea>
+                <br>
+                <input type="submit" value="Analyze News">
+                {% if error_message %}
+                    <p class="error-message">{{ error_message }}</p>
+                {% endif %}
+            </form>
+            {% if data %}
+                <div class="result-section">
+                    <h2>Input Headline:</h2>
+                    <p class="user-input">{{ data.res.input }}</p>
+                    <h2>Predicted Label:</h2>
+                    <p class="predicted-label">{{ data.res.predicted_label }}</p>
+                </div>
+            {% endif %}
+        </section>
+    </div>
+</body>
+</html>

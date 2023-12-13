@@ -1,0 +1,80 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+  
+  .centered-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 800px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  header {
+    background-color: #007BFF;
+    color: #fff;
+    padding: 20px;
+  }
+  
+  .form-section {
+    margin-top: 20px;
+  }
+  
+  form {
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  label, textarea {
+    display: block;
+    margin: 10px 0;
+  }
+  
+  textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    resize: none;
+  }
+  
+  input[type="submit"] {
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+  
+  .result-section {
+    margin-top: 20px;
+  }
+  
+  h2 {
+    margin: 20px 0;
+  }
+  
+  .user-input {
+    font-weight: bold;
+    color: #007BFF;
+  }
+  
+  .predicted-label {
+    font-weight: bold;
+    color: #28a745; /* Green color for positive prediction, adjust as needed */
+  }
+  
