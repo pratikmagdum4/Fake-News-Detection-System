@@ -3,7 +3,7 @@ import pandas as pd
 import spacy
 
 app = Flask(__name__)
-app.secret_key = 'your_secret_key' 
+app.secret_key = '' 
 
 nlp = spacy.load("en_core_web_sm")
 
