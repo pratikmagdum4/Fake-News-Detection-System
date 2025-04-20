@@ -105,7 +105,7 @@ csv_file_path = 'preprocessed_dataset.csv'
 df = pd.read_csv(csv_file_path)
 dataset = df['Headline'].tolist()
 
-dummy_user = {'username': 'pratik@123', 'password': 'dkte123'}
+dummy_user = {'username': 'user@123', 'password': 'dkte123'}
 
 def preprocess_text(text):
     doc = nlp(text)
